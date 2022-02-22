@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+   <div class="d-flex flex-column text-center justify-content-center align-items-center min-vh-100">
+    <i class='bx bxs-check-circle fs-80 text-green'></i>
+       <div class="fs-40 mb-4  fs-sm-30 mt-sm-3">Ваша заявка принята</div>
+       <a href="{% url 'index' %}" class="fs-20 text-blue">Вернуться на главную страницу</a>
+   </div>
+  
+
+  
+  
+{% endblock %}

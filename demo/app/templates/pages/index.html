@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+   <div class="top_navigator d-none">
+      <div class="logo_content">
+          <div class="logo">
+               <i class='bx bxl-c-plus-plus'></i>
+              <div class="logo_name">Fadil Clinic</div>
+          </div>
+          <i class='bx bx-menu' id="btn2"></i>
+      </div>
+  </div>
+ <div class="sidebar d-none d-sm-block">
+     <div class="logo_content">
+         <div class="logo">
+              <i class='bx bxl-c-plus-plus'></i>
+             <div class="logo_name">Fadil Clinic</div>
+         </div>
+         <i class='bx bx-menu' id="btn"></i>
+     </div>
+     <ul class="nav_list">
+      
+          <li class="mt-3">
+              <a href="#main" class=" nav_link_">
+                  <i class='bx bx-grid-alt'></i>
+                  <span class="links_name">Главная</span>
+              </a>
+          
+          </li>
+          <li>
+              <a href="#about" class="nav_link_">
+                  <i class='bx bx-user' ></i>
+                  <span class="links_name">О нас</span>
+              </a>
+             
+          </li>
+          <li>
+              <a href="#result" class="nav_link_">
+                  <i class='bx bx-chat' ></i>
+                  <span class="links_name">Результаты</span>
+              </a>
+            
+          </li>
+        
+          <li>
+              <a href="#contact" class="nav_link_">
+                  <i class='bx bx-cog ' ></i>
+                  <span class="links_name">Контакты</span>
+              </a>
+           
+          </li>
+          <li>
+              <a href="#map" class="nav_link_">
+                  <i class='bx bx-cog ' ></i>
+                  <span class="links_name">Локация</span>
+              </a>
+           
+          </li> 
+     </ul>
+     
+ </div>
+   <!-- Main -->
+   <div class="home_content  pb-sm-3">
+         <div class="bg-light ">
+         
+            <nav class="d-sm-none d-flex align-items-center  px-5 py-2 bg-dark-night">
+               <a href="" class=" text-white fs-25 b-1">
+                  Logo
+               </a>
+               <ul class="navbar d-flex ml-auto mr-5  ">
+                  <a href="#main">
+                     <li><i class='bx bx-home-alt mr-1' ></i> Главная</li>
+                  </a>
+                  <a href="#about">
+                     <li><i class='bx bx-info-circle mr-1'></i> О нас</li>
+                  </a>
+                  <a href="#result">
+                     <li><i class='bx bx-notepad mr-1'></i> Результаты</li>
+                  </a>
+                  <a href="#contact">
+                     <li><i class='bx bx-phone-call mr-1' ></i> Контакты</li>
+                  </a>
+                  <a href="#map">
+                     <li><i class='bx bx-map mr-1'></i> Локация</li>
+                  </a>
+                  
+               </ul>
+               <a href="tel:+998977980007" class="text-light">
+                  +998 97 798 00 07
+               </a>
+            </nav>
+           
+
+            <div class="fix">
+               <div id="main" class="header   p-5 p-sm-4  d-flex align-items-center ">
+                  <form action="{% url 'feedback' %}" class="ml-auto  mx-sm-auto   px-sm-0 " method="POST">
+                     {% csrf_token %}
+                     <div class="text-light fs-18 b-1 text-center">КЛИНИКА FADIL</div>
+                     <div class="text-light fs-35 fs-sm-30 text-center">
+                        <span class="b-2">МИРОВОЙ КЛАСС</span>
+                        <br>
+                        ВОССТАНОВЛЕНИЕ ВОЛОС
+                     </div>
+                     <div class="text-light fs-18 b-1 text-center">НАЧНИТЕ СЛЕДУЮЩУЮ ГЛАВУ СЕГОДНЯ</div>
+                        <div class="form-container mt-4">
+                        <div class="grid-2 gap-1">
+                           <div class="">
+                              <label class="text-light" for="">Имя</label>
+                              <input required name="first_name" class="input" type="text">
+                           </div>
+                           <div class="">
+                              <label class="text-light" for="">Фамилия</label>
+                              <input required name="last_name" class="input" type="text">
+                           </div>
+                        </div>
+                        <div class="my-3">
+                           <label for="" class="text-light">Номер телефона</label>
+                           <input required name="number" type="text" id="selector" class="input">
+                        </div>
+                        <div class="">
+                           <label class="text-light" for="">Чем я могу вам помочь ?</label>
+                           <textarea required name="text" rows="10"></textarea>
+                        </div>
+                        <button class="btn btn-md mt-3 btn-night rounded-1 w-50 mx-auto">Отправить</button>
+                     </div>
+                  </form>
+               </div>
+   
+               <div id="about" class=" about-section bg-dark-night text-light  p-sm-4  px-5 py-5 ">
+                  <div class="grid-2 gap-1">
+                     <div class="left self-center">
+                        <div class="mt-0 fs-40 b-1" >О нас</div>
+                        <p>
+                           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, exercitationem? Iure quae in provident illum perspiciatis veritatis facilis tempora architecto iste voluptatem animi est, doloribus quos, nulla illo ad. Voluptatibus reiciendis molestias, sed officia nesciunt impedit dolores asperiores ipsam vero autem excepturi explicabo neque in consequuntur itaque? Consequatur temporibus eaque hic delectus aliquam ratione odit nam, fugiat voluptatibus culpa ad sit tempora et magnam minima, dolores, necessitatibus rem repellat consectetur officiis nihil quae? Recusandae necessitatibus quia culpa sit ipsa perspiciatis?
+                        </p>
+                     </div>
+                     <div class="right bg-light rounded-1">
+                        <img class="w-100 h-100 rounded-1 object-fit" src="https://www.gettyimages.pt/gi-resources/images/Homepage/Hero/PT/PT_hero_42_153645159.jpg" alt="">
+                     </div>
+                  </div>
+   
+               </div>
+               <div class="hr-light my-0"></div>
+               <!-- Slider -->
+               <div id="result" class="p-sm-4  p-5 bg-dark-night">
+                  <div class="mt-0 fs-40 b-1 text-light mb-4" >Результаты </div>
+                  <div id="image-slider" class="splide vh-50">
+                     <div class="splide__track">
+                        <ul class="splide__list">
+                           <li class="splide__slide">
+                              <img src="https://www.gettyimages.pt/gi-resources/images/Homepage/Hero/PT/PT_hero_42_153645159.jpg">
+                           </li>
+                           <li class="splide__slide">
+                              <img src="https://www.gettyimages.pt/gi-resources/images/Homepage/Hero/PT/PT_hero_42_153645159.jpg">
+                           </li>
+                           <li class="splide__slide">
+                              <img src="https://www.gettyimages.pt/gi-resources/images/Homepage/Hero/PT/PT_hero_42_153645159.jpg">
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  
+               </div>
+         
+               <!-- Contact -->
+               <div id="contact" class=" bg-dark-night text-light">
+                  <div class="hr-light my-0"></div>
+                  <div class="contact  p-5 p-sm-4">
+                     <div class="mt-0 fs-40 b-1 mb-5 text-center" >Контакты</div>
+                     <div class="links flex-wrap d-flex align-items-center justify-content-center">
+                        <a href="https://t.me/TRIXOLOG" class="border-light w-sm-100   px-4 py-2 rounded-3  text-light d-flex align-items-center ">
+                           <i class='bx bxl-telegram fs-40 ' ></i>
+                           <div class="">Telegram</div>
+                        </a>
+                        <a href="https://wa.me/998977980007" class="my-sm-4 border-light w-sm-100 mx-4  mx-sm-0  px-4 py-2 rounded-3  text-light d-flex align-items-center">
+                           <i class='bx bxl-whatsapp fs-40  mx-3'></i>
+                           <div class="">Whatsapp</div>
+                        </a>
+                        <a href="tel:+998977980007" class=" w-sm-100  border-light px-4 py-2  rounded-3 text-light d-flex align-items-center ">
+                           <i class='bx bxs-phone-call fs-38 mr-3' ></i>
+                           <div class="">+998 97 798 00 07</div>
+                        </a>
+                     
+                     
+                     </div>
+                        
+                        
+                  </div>
+               </div>
+            
+               <div id="map" class="p-sm-4  map bg-dark-night p-5">
+                  <div class="fs-40 text-light mb-4 text-center-sm">Местоположение</div>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1533.8144563390545!2d64.43549917140629!3d39.7479858008475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2s!4v1644769473214!5m2!1sru!2s"  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+               </div>
+            
+               <div style="border-top:1px solid #fff;" class="footer grid-3 gap-1 transform text-light p-5 bg-dark-night">
+                  <div class="fs-20 text-center order-1"><i class='bx bxs-map'></i> Город Бухара,ул. Пиридасгир</div>
+                  <div class="fs-20 text-center order-2">Fadil Hair Transplant Center 2015-2022</div>
+                  <div class="fs-20 text-center order-3">Почтовый индекс: 200100</div>
+                  
+   
+               </div>
+            </div>
+      </div>
+   </div>
+  
+   <script src="https://unpkg.com/imask"></script>
+   <script>
+      document.addEventListener( 'DOMContentLoaded', function () {
+      new Splide( '#image-slider' ).mount();
+      } );
+
+
+      let links = document.querySelectorAll('.nav_link_')
+      for(let link of links){
+         link.addEventListener('click', ()=> {
+            sidebar.classList.toggle('active')
+            topNavigator.classList.toggle('active')
+         })
+      }
+
+
+      
+  
+       var element = document.getElementById('selector');
+        var maskOptions = {
+        mask: '+{998}(00)000-00-00'
+        };
+        var mask = IMask(element, maskOptions);
+
+   </script>
+
+{% endblock %}
