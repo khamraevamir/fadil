@@ -10,4 +10,6 @@ urlpatterns = [
 
     path('feedback', views.feedback, name='feedback'),
     path('success', views.success, name='success'),
+
+    path('question/', views.question, name='question'),
 ]

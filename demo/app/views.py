@@ -1,24 +1,31 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from app.models import Feedback
+from app.models import Feedback, Question, Gallery
 from users.forms import CustomUserCreationForm
 from django.http import HttpResponse
 from django.core.exceptions import ValidationError
 from users.forms import CustomUserCreationForm
 
+
+
 def index(request):
-    return render(request, 'pages/index.html')
+    gallery = Gallery.objects.order_by('-id')
+    return render(request, 'pages/index.html', {'gallery':gallery})
+
+
+def question(request):
+    questions = Question.objects.order_by('-id')
+    return render(request, 'pages/question.html', {'questions':questions})
+
 
 def feedback(request):
     if request.method == 'POST':
         first_name = request.POST.get('first_name')
-        last_name = request.POST.get('last_name')
         number = request.POST.get('number')
         text = request.POST.get('text')
 
         feedback = Feedback()
         feedback.first_name = first_name
-        feedback.last_name = last_name
         feedback.number = number
         feedback.text = text
         feedback.save()

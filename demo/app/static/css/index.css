@@ -2396,7 +2396,7 @@ textarea {
     height: 100%;
     width: 78px;
     background: var(--dark-ocean--);
-    padding: 6px 14px;
+
     transition: all 0.5s ease;
 }
 
@@ -2406,11 +2406,18 @@ textarea {
 }
 
 
+.sidebar .logo_content {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 16px;
+}
+
 /* Logo */
 .sidebar .logo_content .logo {
     color: #fff;
     display: flex;
-    height: 50px;
+    
     align-items: center;
     width: 100%;
     opacity: 0;
@@ -2442,27 +2449,29 @@ textarea {
 /* Hamburger */
 .sidebar #btn {
     cursor: pointer;
-    position: absolute;
-    top: 6px;
-    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #fff;
     font-size: 20px;
-    height: 50px;
-    width: 50px;
+ 
     text-align: center;
-    line-height: 50px;
-    transform: translateX(-50%);
+
 }
 
 
 .sidebar.active #btn {
-    left: 90%;
+  
 }
 
 
 /* Nav list */
 .sidebar .nav_list {
     margin-top: 20px;
+    
 }
 
 
@@ -2474,6 +2483,19 @@ textarea {
     line-height: 50px;
 }
 
+
+.sidebar .nav_list li i {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+.sidebar .nav_list li span {
+    position: absolute;
+    left: 50px;
+    top: 0;
+}
 
 
 /* Tooltip */
@@ -2718,7 +2740,8 @@ textarea {
     position: fixed;
     width: 100%;
     height: 60px;
-    background: var(--dark-ocean--);
+    background: #000;
+    border-bottom: 1px solid var(--light--);
     z-index: 9999;
     display: flex;
  
@@ -2788,8 +2811,8 @@ textarea {
     left: 0;
     height: 100%;
     width: 100%;
-    background: var(--dark-ocean--);
-    padding: 6px 14px;
+    background: var(--dark-night--);
+  
     transition: all 0.5s ease;
     transform: translate(-100%, 0);
     z-index: 999;
@@ -2803,32 +2826,14 @@ textarea {
 
 
 /* Logo */
-.sidebar .logo_content .logo {
-    color: #fff;
+
+.sidebar .logo_content {
     display: flex;
-    height: 50px;
     align-items: center;
-    width: 100%;
-    opacity: 1;
-    pointer-events: none;
-    transition: all 0.5s ease;
 }
 
-
-
-
-
-/* Logo icon */
-.sidebar .logo_content .logo i {
-    font-size: 28px;
-    margin-right: 5px;
-}
-
-
-/* Logo name */
-.sidebar .logo_content .logo .logo_name {
-    font-size: 20px;
-    font-weight: 400;
+.sidebar .logo_content img {
+    width: 80px;
 }
 
 
@@ -2836,16 +2841,13 @@ textarea {
 .sidebar #btn {
     z-index: 99;
     cursor: pointer;
-    position: absolute;
-    top: 0px;
-    left: 90%;
+
+  
     color: #fff;
     font-size: 25px;
-    height: 50px;
-    width: 50px;
+ 
     text-align: center;
-    line-height: 50px;
-    transform: translateX(-50%);
+
     transition: all 0.4s ease;
 }
 

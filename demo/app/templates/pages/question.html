@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<div class="top_navigator d-none">
+    <div class="logo_content">
+        <div class="logo">
+             <img class="logo_name" src="{% static 'images/logo2.png' %}" alt="">
+        </div>
+        <i class='bx bx-menu' id="btn2"></i>
+    </div>
+</div>
+<div class="sidebar d-none d-sm-block">
+   <div class="logo_content  border-bottom-light">
+      
+       <img class="logo_name" src="{% static 'images/logo2.png' %}" alt="">
+    
+       
+       <i class='bx bx-menu' id="btn"></i>
+   </div>
+   <ul class="nav_list">
+       <li class="mt-3">
+          <a href="{% url 'index' %}" class=" nav_link_">
+             <i class='bx bx-home-alt mr-1' ></i>
+             <span class="links_name">Главная</span>
+          </a>
+       
+       </li>
+
+       <li>
+          <a href="{% url 'index' %}" class="nav_link_">
+             <i class='bx bx-info-circle mr-1'></i>
+             <span class="links_name">О нас</span>
+          </a>
+          
+       </li>
+       <li>
+          <a href="{% url 'index' %}" class="nav_link_">
+             <i class='bx bx-notepad mr-1'></i>
+             <span class="links_name">Результаты</span>
+          </a>
+       
+       </li>
+       <li>
+        <a href="{% url 'question' %}" class="nav_link_">
+            <i class='bx bx-question-mark mr-1' ></i>
+           <span class="links_name">Вопросы и ответы</span>
+        </a>
+     
+        </li>
+    
+       <li>
+          <a href="{% url 'index' %}" class="nav_link_">
+             <i class='bx bx-phone-call mr-1' ></i>
+             <span class="links_name">Контакты</span>
+          </a>
+       
+       </li>
+       <li>
+          <a href="{% url 'index' %}" class="nav_link_">
+             <i class='bx bx-map mr-1'></i>
+             <span class="links_name">Локация</span>
+          </a>
+       
+       </li> 
+   </ul>
+   
+</div>
+<div class="home_content">
+    <div class=" bg-dark-night px-3 vh-100">
+        <div class="text-light fs-35 pt-4">Вопросы и ответы.</div>
+        <div class="grid-1 pt-4">
+            {% for item in questions %}
+            <div class="p-4 border-light text-light rounded-1">
+                <div class="fs-25 b-1">{{item.question}}</div>
+                <div class="hr-light"></div>
+                <div class="fs-17 mt-3">
+                    {{item.answer}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+   
+
+{% endblock %}
